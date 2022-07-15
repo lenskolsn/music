@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    box-shadow: 0 0 10px #cecece;
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+}
+
+.song {
+    width: 400px;
+    height: 100%;
+    border-right: 1px solid #cecece;
+}
+
+.song-avatar {
+    margin: 15px auto;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    /* border: 1px dotted gray; */
+}
+.song-avatar img {
+    width: 100%;
+    box-shadow: 0 0 10px #cecece;
+    border-radius: 50%;
+}
+
+.play {
+    animation: play 10s linear infinite;
+}
+
+.pause {
+    animation-play-state: paused;
+}
+
+@keyframes play {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.song-info {
+    text-align: center;
+}
+
+.song-info h5 {
+    color: gray;
+}
+
+.song-btn {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.prev-btn,
+.play-btn,
+.next-btn {
+    flex-grow: 1;
+    font-size: 25px;
+    text-align: center;
+}
+
+.prev-btn,
+.play-btn,
+.next-btn i {
+    cursor: pointer;
+}
+
+.song-timeline {
+    margin: 15px;
+    border: 1px solid green6;
+    text-align: center;
+}
+
+.song-timeline input {
+    width: 100%;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    /* background: transparent; */
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #999;
+    height: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-top: -7px;
+    background: #333;
+    border: 1px solid white;
+    box-shadow: 0 0 5px #f2f2f2;
+}
+
+.lists {
+    width: 300px;
+    background-color: #f2f2f2;
+}
+
+.lists-item {
+    width: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.lists-avatar {
+    width: 50px;
+    /* height: 100%; */
+}
+
+.lists-item img {
+    width: 100%;
+    box-shadow: 0 0 5px #cecece;
+}
+
+.lists-info {
+    margin-left: 12px;
+}
