@@ -81,7 +81,6 @@ songs.forEach((e) => {
   lists.appendChild(div);
 });
 
-
 const play = (name, author, path, avatar, key) => {
   indexSong = key - 1;
   audio.setAttribute("src", path);
@@ -116,9 +115,9 @@ btnPlay.onclick = () => {
 };
 
 btnPrev.onclick = () => {
-  indexSong = indexSong - 1
-  if(indexSong<0){
-    indexSong = songs.length - 1
+  indexSong = indexSong - 1;
+  if (indexSong < 0) {
+    indexSong = songs.length - 1;
   }
   console.log(indexSong);
   audio.setAttribute("src", songs[indexSong].path);

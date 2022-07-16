@@ -88,6 +88,7 @@ body {
 .play-btn,
 .next-btn i {
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .song-timeline {
@@ -137,9 +138,14 @@ input[type="range"]::-webkit-slider-thumb {
     padding: 5px;
     background-color: white;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .active {
+    background-color: cornflowerblue;
+    color: white;
+}
+.firstActive {
     background-color: cornflowerblue;
     color: white;
 }
