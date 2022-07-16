@@ -49,6 +49,8 @@ let audio = document.querySelector(".audio");
 let lists = document.querySelector(".lists");
 
 audio.setAttribute("src", firstSong.path);
+songName.innerHTML = firstSong.name
+songAuthor.innerHTML = firstSong.author
 urlAvatar.setAttribute("src", firstSong.avatar);
 
 songs.forEach((e) => {
