@@ -35,23 +35,26 @@ const songs = [
     path: "./assets/song/ctcht.mp3",
   },
 ];
+
 let isPlay = true;
-// Song main
+let firstSong = songs[0];
+let indexSong = 0;
+
 let btnPlay = document.querySelector(".play-btn i");
 let songAvatar = document.querySelector(".song-avatar");
 let songName = document.querySelector(".song-info h3");
 let songAuthor = document.querySelector(".song-info h5");
 let urlAvatar = document.querySelector(".song-avatar img");
 let audio = document.querySelector(".audio");
-let firstSong = songs[0];
+let lists = document.querySelector(".lists");
+
 audio.setAttribute("src", firstSong.path);
 urlAvatar.setAttribute("src", firstSong.avatar);
-let lists = document.querySelector(".lists");
 
 songs.forEach((e) => {
   var div = document.createElement("div");
   var html = `
-    <div class="lists-item" onclick="play('${e.name}','${e.author}','${e.path}','${e.avatar}')">
+    <div class="lists-item" onclick="play('${e.name}','${e.author}','${e.path}','${e.avatar}','${e.id}')" key="${e.id}">
         <div class="lists-avatar">
             <img src="${e.avatar}" alt="">
         </div>
@@ -64,21 +67,27 @@ songs.forEach((e) => {
   div.innerHTML = html;
   lists.appendChild(div);
 });
-
-const play = (name, author,path, avatar) => {
-  audio.setAttribute('src', path);
+// onclick="play('${e.name}','${e.author}','${e.path}','${e.avatar}','${e.id}')" key="${e.id}"
+const play = (name, author, path, avatar, key) => {
+  audio.setAttribute("src", path);
   audio.play();
-  urlAvatar.setAttribute('src', avatar);
+  urlAvatar.setAttribute("src", avatar);
   songName.innerHTML = name;
   songAuthor.innerHTML = author;
   btnPlay.setAttribute("class", "fas fa-pause");
   songAvatar.classList.remove("pause");
   songAvatar.classList.add("play");
+  var list_item = document.querySelectorAll(".lists-item");
+  list_item.forEach((e) => {
+    e.getAttribute("key") == key
+      ? e.classList.add("active")
+      : e.classList.remove("active");
+  });
 };
 
 btnPlay.onclick = () => {
   audio.play();
-  if(isPlay){
+  if (isPlay) {
     btnPlay.setAttribute("class", "fas fa-pause");
     songAvatar.classList.remove("pause");
     songAvatar.classList.add("play");

@@ -3,9 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .app {
@@ -135,7 +136,9 @@ input[type="range"]::-webkit-slider-thumb {
     background-color: white;
     cursor: pointer;
 }
-
+.active{
+background-color: blanchedalmond;
+}
 .lists-avatar {
     width: 50px;
     /* height: 100%; */
@@ -148,4 +151,19 @@ input[type="range"]::-webkit-slider-thumb {
 
 .lists-info {
     margin-left: 12px;
+}
+/* Responsive */
+@media (max-width: 740px) {
+    .app{
+        width: 350px;
+        height: auto;
+        flex-direction: column;
+    }
+    .song{
+        width: 100%;
+    }
+    .lists{
+        border: 1px solid #cecece;
+        width: 100%;
+    }
 }
